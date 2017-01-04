@@ -1,0 +1,33 @@
+From 76ecf7ad57195848209569c70b3728066b2c3213 Mon Sep 17 00:00:00 2001
+From: Jorge <jlamperez10@gmail.com>
+Date: Tue, 18 Oct 2016 18:01:50 +0200
+Subject: [PATCH 3/8] 	changed: arch/arm/mach-zynq/Kconfig
+
+---
+ arch/arm/mach-zynq/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/arch/arm/mach-zynq/Kconfig b/arch/arm/mach-zynq/Kconfig
+index 339e464..6aaf207 100644
+--- a/arch/arm/mach-zynq/Kconfig
++++ b/arch/arm/mach-zynq/Kconfig
+@@ -46,6 +46,9 @@ config TARGET_ZYNQ_CC108
+ 	bool "Zynq CC108 Board"
+ 	select ZYNQ_CUSTOM_INIT
+ 
++config TARGET_ZYNQ_ZYNQBERRY
++        bool "Zynqberry TE0726 Board"
++
+ endchoice
+ 
+ config SYS_BOARD
+@@ -67,5 +70,6 @@ config SYS_CONFIG_NAME
+ 	default "zynq_cse" if TARGET_ZYNQ_CSE
+ 	default "zynq_afx" if TARGET_ZYNQ_AFX
+ 	default "zynq_cc108" if TARGET_ZYNQ_CC108
++	default "zynqberry" if TARGET_ZYNQ_ZYNQBERRY
+ 
+ endif
+-- 
+1.9.1
+

@@ -1,0 +1,42 @@
+From 14e04a6087a3b1ca9abd0a76e1835f273f98ad5d Mon Sep 17 00:00:00 2001
+From: Jorge <jlamperez10@gmail.com>
+Date: Tue, 18 Oct 2016 18:04:00 +0200
+Subject: [PATCH 5/8] 	new file:   configs/zynqberry_defconfig
+
+---
+ configs/zynqberry_defconfig | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+ create mode 100644 configs/zynqberry_defconfig
+
+diff --git a/configs/zynqberry_defconfig b/configs/zynqberry_defconfig
+new file mode 100644
+index 0000000..2fcf350
+--- /dev/null
++++ b/configs/zynqberry_defconfig
+@@ -0,0 +1,23 @@
++CONFIG_ARM=y
++CONFIG_ARCH_ZYNQ=y
++CONFIG_TARGET_ZYNQ_ZYNQBERRY=y
++CONFIG_DEFAULT_DEVICE_TREE="zynqberry"
++CONFIG_SPL=y
++CONFIG_FIT=y
++CONFIG_FIT_VERBOSE=y
++CONFIG_FIT_SIGNATURE=y
++CONFIG_SYS_PROMPT="Zynqberry> "
++# CONFIG_CMD_IMLS is not set
++# CONFIG_CMD_FLASH is not set
++CONFIG_CMD_GPIO=y
++# CONFIG_CMD_SETEXPR is not set
++CONFIG_OF_EMBED=y
++CONFIG_NET_RANDOM_ETHADDR=y
++CONFIG_SPL_DM_SEQ_ALIAS=y
++CONFIG_SPI_FLASH=y
++CONFIG_SPI_FLASH_BAR=y
++CONFIG_SPI_FLASH_SPANSION=y
++CONFIG_SPI_FLASH_STMICRO=y
++CONFIG_SPI_FLASH_WINBOND=y
++CONFIG_ZYNQ_GEM=y
++CONFIG_ZYNQ_QSPI=y
+-- 
+1.9.1
+

@@ -1,0 +1,106 @@
+From 06159e13a9d435ffc242d41ff66026deb1f74cb5 Mon Sep 17 00:00:00 2001
+From: Jorge <jlamperez10@gmail.com>
+Date: Tue, 18 Oct 2016 18:02:29 +0200
+Subject: [PATCH 4/8] 	new file:   arch/arm/dts/zynqberry.dts
+
+---
+ arch/arm/dts/zynqberry.dts | 87 ++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 87 insertions(+)
+ create mode 100644 arch/arm/dts/zynqberry.dts
+
+diff --git a/arch/arm/dts/zynqberry.dts b/arch/arm/dts/zynqberry.dts
+new file mode 100644
+index 0000000..04c27be
+--- /dev/null
++++ b/arch/arm/dts/zynqberry.dts
+@@ -0,0 +1,87 @@
++/*
++ * Xilinx ZYNQBERRY board DTS
++ *
++ *  Copyright (C) 2011 - 2015 Xilinx
++ *  Copyright (C) 2012 National Instruments Corp.
++ *
++ * SPDX-License-Identifier:	GPL-2.0+
++ */
++/dts-v1/;
++#include "zynq-7000.dtsi"
++
++/ {
++	model = "Zynqberry Development Board";
++	compatible = "xlnx,zynq-zed", "xlnx,zynq-7000";
++
++	aliases {
++		serial0 = &uart1;
++		spi0 = &qspi;
++		mmc0 = &sdhci1;
++	};
++
++	memory {
++		device_type = "memory";
++		reg = <0x0 0x20000000>;
++	};
++
++	chosen {
++		bootargs = "earlyprintk";
++		stdout-path = "serial0:115200n8";
++	};
++
++	usb_phy0: phy0 {
++		compatible = "usb-nop-xceiv";
++		#phy-cells = <0>;
++	};
++};
++
++&clkc {
++	ps-clk-frequency = <33333333>;
++};
++
++
++&qspi {
++	status = "okay";
++	is-dual = <0>;
++	num-cs = <1>;
++	flash@0 {
++                compatible = "spansion,s25fl128s";
++                reg = <0x0>;
++                #address-cells = <1>;
++                #size-cells = <1>;
++                spi-max-frequency = <50000000>;
++                partition@0x00000000 {
++                        label = "boot";
++                        reg = <0x00000000 0x00500000>;
++                };
++                partition@0x00500000 {
++                        label = "bootenv";
++                        reg = <0x00500000 0x00020000>;
++                };
++                partition@0x00520000 {
++                        label = "kernel";
++                        reg = <0x00520000 0x00a80000>;
++                };
++                partition@0x00fa0000 {
++                        label = "spare";
++                        reg = <0x00fa0000 0x00000000>;
++                };
++	
++	};
++};
++
++&sdhci1 {
++	u-boot,dm-pre-reloc;
++	status = "okay";
++};
++
++&uart1 {
++	u-boot,dm-pre-reloc;
++	status = "okay";
++};
++
++&usb0 {
++	status = "okay";
++	dr_mode = "host";
++	usb-phy = <&usb_phy0>;
++};
+-- 
+1.9.1
+

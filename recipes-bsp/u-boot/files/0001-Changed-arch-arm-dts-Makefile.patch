@@ -1,0 +1,26 @@
+From f37598db8dd432002b2cb3344acb5689448cc8fd Mon Sep 17 00:00:00 2001
+From: Jorge <jlamperez10@gmail.com>
+Date: Tue, 18 Oct 2016 17:58:07 +0200
+Subject: [PATCH 1/8] 	Changed: arch/arm/dts/Makefile
+
+---
+ arch/arm/dts/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
+index d61e98f..e5c85a0 100644
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -76,7 +76,8 @@ dtb-$(CONFIG_ARCH_ZYNQ) += zynq-zc702.dtb \
+ 	zynq-zc770-xm010.dtb \
+ 	zynq-zc770-xm011.dtb \
+ 	zynq-zc770-xm012.dtb \
+-	zynq-zc770-xm013.dtb
++	zynq-zc770-xm013.dtb \
++        zynqberry.dtb
+ dtb-$(CONFIG_ARCH_ZYNQMP) += \
+ 	zynqmp-ep108.dtb			\
+ 	zynqmp-zcu102.dtb			\
+-- 
+1.9.1
+
