@@ -11,7 +11,7 @@ This layer depends on:
 
   URI: https://github.com/Xilinx/meta-xilinx
   layers: meta-xilinx
-  branch: krogoth
+  branch: morty
 
 
 Patches
