@@ -13,7 +13,7 @@ new file mode 100644
 index 0000000..bbbeca3
 --- /dev/null
 +++ b/include/configs/zynqberry.h
-@@ -0,0 +1,91 @@
+@@ -0,0 +1,90 @@
 +/*
 + * (C) Copyright 2013 Xilinx, Inc.
 + *
@@ -26,7 +26,6 @@ index 0000000..bbbeca3
 +#ifndef __CONFIG_ZYNQ_ZED_H
 +#define __CONFIG_ZYNQ_ZED_H
 +
-+#define CONFIG_SYS_NO_FLASH
 +
 +#define CONFIG_ZYNQ_USB
 +#define CONFIG_ZYNQ_SDHCI1

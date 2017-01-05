@@ -4,8 +4,8 @@ Date: Tue, 18 Oct 2016 18:04:00 +0200
 Subject: [PATCH 5/8] 	new file:   configs/zynqberry_defconfig
 
 ---
- configs/zynqberry_defconfig | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ configs/zynqberry_defconfig | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
  create mode 100644 configs/zynqberry_defconfig
 
 diff --git a/configs/zynqberry_defconfig b/configs/zynqberry_defconfig
@@ -13,15 +13,17 @@ new file mode 100644
 index 0000000..2fcf350
 --- /dev/null
 +++ b/configs/zynqberry_defconfig
-@@ -0,0 +1,23 @@
+@@ -0,0 +1,25 @@
 +CONFIG_ARM=y
++CONFIG_SYS_CONFIG_NAME = "zynqberry"
 +CONFIG_ARCH_ZYNQ=y
-+CONFIG_TARGET_ZYNQ_ZYNQBERRY=y
 +CONFIG_DEFAULT_DEVICE_TREE="zynqberry"
 +CONFIG_SPL=y
 +CONFIG_FIT=y
 +CONFIG_FIT_VERBOSE=y
 +CONFIG_FIT_SIGNATURE=y
++CONFIG_SYS_NO_FLASH=y
++CONFIG_HUSH_PARSER=y
 +CONFIG_SYS_PROMPT="Zynqberry> "
 +# CONFIG_CMD_IMLS is not set
 +# CONFIG_CMD_FLASH is not set
@@ -39,4 +41,3 @@ index 0000000..2fcf350
 +CONFIG_ZYNQ_QSPI=y
 -- 
 1.9.1
-
